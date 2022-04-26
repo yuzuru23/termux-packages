@@ -1,0 +1,10 @@
+--- ./packages	2020-10-18 15:40:54.000000000 +0530
++++ ./packages	2022-04-26 19:48:59.847440325 +0530
+@@ -54,6 +54,7 @@
+ libraries/hpc                -           -                               -
+ libraries/libiserv           -           -                               -
+ libraries/mtl                -           -                               https://github.com/haskell/mtl.git
++libraries/network            -           -                               -
+ libraries/parsec             -           -                               https://github.com/haskell/parsec.git
+ libraries/pretty             -           -                               https://github.com/haskell/pretty.git
+ libraries/process            -           -                               ssh://git@github.com/haskell/process.git

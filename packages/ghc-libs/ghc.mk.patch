@@ -1,0 +1,10 @@
+--- ./ghc.mk	2021-08-17 14:04:30.000000000 +0530
++++ ./ghc.mk	2022-04-26 20:29:42.448127030 +0530
+@@ -470,6 +470,7 @@
+ PACKAGES_STAGE1 += exceptions
+ PACKAGES_STAGE1 += haskeline
+ PACKAGES_STAGE1 += ghci
++PACKAGES_STAGE1 += network
+ PACKAGES_STAGE1 += libiserv
+ 
+ # See Note [No stage2 packages when CrossCompiling or Stage1Only].

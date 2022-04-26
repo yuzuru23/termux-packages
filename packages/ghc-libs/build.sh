@@ -28,6 +28,17 @@ TERMUX_PKG_PROVIDES="haskekl-ghc-pkg, haskell-ghci"
 TERMUX_PKG_CONFLICTS="haskell-ghci"
 TERMUX_PKG_STATICSPLIT_EXTRA_PATTERNS="lib/**/*.hi lib/**/*.o"
 
+termux_step_post_get_source() {
+	cd "${TERMUX_PKG_SRCDIR}"/libraries
+	mkdir -p network && cd network
+	local tmpfile="$(mktemp)"
+	termux_download \
+		https://hackage.haskell.org/package/network-2.8.0.1/network-2.8.0.1.tar.gz \
+		"$tmpfile" \
+		61f55dbfed0f0af721a8ea36079e9309fcc5a1be20783b44ae500d9e4399a846
+	tar xf "$tmpfile" -C . --strip-components=1
+}
+
 termux_step_pre_configure() {
 	termux_setup_ghc
 
@@ -90,6 +101,7 @@ termux_step_pre_configure() {
 		DYNAMIC_GHC_PROGRAMS = YES
 		SplitSections      = YES
 		StripLibraries     = YES
+		libraries/libiserv_CONFIGURE_OPTS += --flags=+network
 	EOF
 
 	patch -p1 <<-EOF
