@@ -124,6 +124,8 @@ termux_step_setup_variables() {
 	TERMUX_PKG_GROUPS="" # https://wiki.archlinux.org/title/Pacman#Installing_package_groups
 	TERMUX_PKG_NO_SHEBANG_FIX=false # if true, skip fixing shebang accordingly to TERMUX_PREFIX
 	TERMUX_PKG_IS_HASKELL_LIB=true # by default assume haskell package is lib package as most of them will always be libs.
+	TERMUX_PYTHON_VERSION=$(. $TERMUX_SCRIPTDIR/packages/python/build.sh; echo $_MAJOR_VERSION)
+	TERMUX_PYTHON_DEPENDS=""
 
 	unset CFLAGS CPPFLAGS LDFLAGS CXXFLAGS
 }
