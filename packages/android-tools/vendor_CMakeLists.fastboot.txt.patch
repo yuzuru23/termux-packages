@@ -11,15 +11,45 @@ index a217ecc..1d8d3b1 100644
  target_include_directories(libzip PUBLIC
  	libziparchive/include
  	libziparchive/incfs_support/include
-@@ -61,7 +61,11 @@ add_library(libselinux STATIC
+@@ -61,7 +61,41 @@ add_library(libselinux STATIC
  	selinux/libselinux/src/setrans_client.c
  	selinux/libselinux/src/sha1.c
  	selinux/libselinux/src/label_file.c
 -	selinux/libselinux/src/regex.c)
 +	selinux/libselinux/src/regex.c
 +	selinux/libselinux/src/android/android_platform.c
-+  selinux/libselinux/src/context.c
-+  selinux/libselinux/src/procattr.c
++	selinux/libselinux/src/android/android.c
++	selinux/libselinux/src/avc.c
++	selinux/libselinux/src/avc_internal.c
++	selinux/libselinux/src/avc_sidtab.c
++	selinux/libselinux/src/canonicalize_context.c
++	selinux/libselinux/src/checkAccess.c
++	selinux/libselinux/src/check_context.c
++	selinux/libselinux/src/compute_av.c
++	selinux/libselinux/src/compute_create.c
++	selinux/libselinux/src/compute_member.c
++	selinux/libselinux/src/context.c
++	selinux/libselinux/src/deny_unknown.c
++	selinux/libselinux/src/disable.c
++	selinux/libselinux/src/enabled.c
++	selinux/libselinux/src/fgetfilecon.c
++	selinux/libselinux/src/fsetfilecon.c
++	selinux/libselinux/src/getenforce.c
++	selinux/libselinux/src/getfilecon.c
++	selinux/libselinux/src/get_initial_context.c
++	selinux/libselinux/src/getpeercon.c
++	selinux/libselinux/src/init.c
++	selinux/libselinux/src/lgetfilecon.c
++	selinux/libselinux/src/load_policy.c
++	selinux/libselinux/src/lsetfilecon.c
++	selinux/libselinux/src/mapping.c
++	selinux/libselinux/src/policyvers.c
++	selinux/libselinux/src/procattr.c
++	selinux/libselinux/src/reject_unknown.c
++	selinux/libselinux/src/sestatus.c
++	selinux/libselinux/src/setenforce.c
++	selinux/libselinux/src/setfilecon.c
++	selinux/libselinux/src/stringrep.c
 +  core/libpackagelistparser/packagelistparser.cpp)
  
  target_compile_definitions(libselinux PRIVATE
