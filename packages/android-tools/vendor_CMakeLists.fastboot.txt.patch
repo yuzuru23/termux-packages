@@ -2,6 +2,15 @@ diff --git a/vendor/CMakeLists.fastboot.txt b/vendor/CMakeLists.fastboot.txt
 index a217ecc..1d8d3b1 100644
 --- a/vendor/CMakeLists.fastboot.txt
 +++ b/vendor/CMakeLists.fastboot.txt
+@@ -5,7 +5,7 @@ add_library(libzip STATIC
+ 	libziparchive/zip_error.cpp
+ 	libziparchive/zip_writer.cc)
+ 
+-target_compile_definitions(libzip PRIVATE -DZLIB_CONST)
++target_compile_definitions(libzip PRIVATE -DZLIB_CONST -DINCFS_SUPPORT_DISABLED)
+ target_include_directories(libzip PUBLIC
+ 	libziparchive/include
+ 	libziparchive/incfs_support/include
 @@ -72,7 +72,11 @@ add_library(libselinux STATIC
  	selinux/libselinux/src/setenforce.c
  	selinux/libselinux/src/setrans_client.c
